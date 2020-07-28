@@ -1,0 +1,38 @@
+@media only screen and (min-width: 990px) {
+  .flow-text {
+    font-size: 1.704rem;
+  }
+}
+
+@media only screen and (min-width: 1020px) {
+  .flow-text {
+    font-size: 1.728rem;
+  }
+}
+
+@media only screen and (min-width: 1050px) {
+  .flow-text {
+    font-size: 1.752rem;
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  .flow-text {
+    font-size: 1.776rem;
+  }
+}
+
+.tab:hover
+{
+  text-decoration: underline;
+}
+
+header, body, footer {
+  padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+  header, body, footer {
+  padding-left: 0;
+  }
+}

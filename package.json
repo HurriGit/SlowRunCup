@@ -1,15 +1,22 @@
 {
-  "name": "SlowRunCupTest",
+  "name": "SlowRunCup-netlify-functions-express",
   "version": "0.0.1",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "netlify-lambda build express",
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HurriGit/SlowRunCup-netlify-functions-express"
+  },
+  "keywords": [
+    "netlify",
+    "express.js"
+  ],
+  "author": "Hurri",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",

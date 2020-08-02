@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "cross-env NODE_ENV=dev npm-run-all --parallel start:app start:server",
-    "start:app": "react-scripts start",
+    "start:app": "npm start",
     "start:server": "netlify-lambda serve functions",
     "build": "netlify-lambda build functions"
   },

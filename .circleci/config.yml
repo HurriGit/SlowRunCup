@@ -1,19 +1,18 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
-workflows:
-  node-tests:
-    jobs:
-      - node/test
-      - jobs/install
-
-executors:
-  my-executor:
-    docker:
-      - image: circleci/ruby:2.5.1-node-browsers
 
 jobs:
-  install:
-    executor: my-executor
+  build:
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
     steps:
+      - checkout
       - run: npm install && nodemon app.js
+
+workflows:
+  version: 2.1
+  build_and_test:
+    jobs:
+      - build
+      - node/test

@@ -1,5 +1,5 @@
 {
-  "name": "SlowRunCup-netlify-functions-express",
+  "name": "SlowRunCup",
   "version": "0.0.1",
   "description": "",
   "main": "app.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HurriGit/SlowRunCup-netlify-functions-express"
+    "url": "git+https://github.com/HurriGit/SlowRunCup"
   },
   "author": "Hurri",
   "license": "ISC",

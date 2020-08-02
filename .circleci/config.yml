@@ -5,3 +5,14 @@ workflows:
   node-tests:
     jobs:
       - node/test
+
+executors:
+  my-executor:
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+
+jobs:
+  my-job:
+    executor: my-executor
+    steps:
+      - run: npm install && nodemon app.js

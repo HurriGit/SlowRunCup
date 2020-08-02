@@ -1,7 +1,6 @@
 const express = require('express')
 const fs = require('fs')
 const bodyParser = require('body-parser')
-const serverless = require('serverless-http');
 const app = express()
 
 // EJS

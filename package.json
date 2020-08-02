@@ -4,9 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "netlify-lambda build express",
-    "start": "node app.js"
+    "start": "cross-env NODE_ENV=dev npm-run-all --parallel start:app start:server",
+    "start:app": "react-scripts start",
+    "start:server": "netlify-lambda serve functions",
+    "build": "netlify-lambda build functions"
   },
   "repository": {
     "type": "git",

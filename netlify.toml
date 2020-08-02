@@ -1,0 +1,3 @@
+[build]
+  command = "npm install && npm app.js"
+  functions = "functions"

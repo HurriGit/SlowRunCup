@@ -1,7 +1,7 @@
 const express = require('express')
 const fs = require('fs')
 const bodyParser = require('body-parser')
-const { waitForDebugger } = require('inspector')
+const serverless = require('serverless-http');
 const app = express()
 
 // EJS
@@ -65,3 +65,4 @@ app.get('/Regles', (req, res) => {
 })
 
 app.listen(3000)
+console.log("Listening on port 3000")

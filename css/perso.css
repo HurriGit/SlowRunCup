@@ -36,3 +36,56 @@ header, body, footer {
   padding-left: 0;
   }
 }
+
+td {
+  border-radius: 0px;
+}
+
+.bottom {
+  position: absolute;
+	bottom: 60px;
+  left: 0;
+}
+
+.underline {
+  color: #3333cc;
+}
+
+.underline:hover {
+  text-decoration: underline;
+  
+}
+
+blockquote {
+  border-left: 5px solid #dd1e23;
+}
+
+.nav-text-adapt {
+  font-size: 3vw;
+}
+
+p {
+  text-align: justify;
+}
+
+.input-field .prefix.active {
+  color: #000;
+}
+
+.input-field input[type=text]:focus + label {
+  color: #000;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=text]:not(.browser-default) {
+  border-bottom: 1px solid #000;
+}
+
+.select-wrapper input.select-dropdown,
+.select-wrapper input.select-dropdown:focus {
+  border-bottom: 1px solid #000;
+}
+
+input[Value=Valider].btn {
+  margin-top: 20px;
+}

@@ -1,0 +1,79 @@
+<%- include('../layout/header'); -%>
+<%- include('../layout/sidenav'); -%>
+<div>
+    <div class="container">
+        <blockquote>
+            <h1 class="header">Inscription<br></h1>
+        </blockquote>
+        <p class="justify">
+            C'est ici que tu vas pouvoir t'inscrire à la prochaine Slow Run Cup ! Tu n'as qu'à rentrer ton pseudo Ubisoft, ton pays de résidence et ensuite soumettre ton inscription.
+            Celle-ci sera ensuite soumise à une validation d'un admin après contact sur Ubisoft. 
+        </p>
+        <p class="justify">
+            Si tu as la moindre question n'hésite pas à consulter les <a href="Regles" class="underline">règles</a> de la compétition ou bien à nous 
+            <a href="Contact" class="underline">contacter</a> directement !
+        </p>
+        <div>
+          <a class="btn red" onclick="afficherForm()"><i class="material-icons left">edit</i>S'inscrire</a>
+          <div id="form" class="hide">
+            <div class="row">
+              <form id="formInscription" class="col s12" method="POST" action="/Inscription">
+                <div class="row">
+                  <div class="input-field col s5">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="pseudo" type="text" class="validate" name="pseudo" required>
+                    <label for="pseudo" class="black-text">Pseudo Ubisoft</label>
+                  </div>
+                  <div class="input-field col s5">
+                    <select id="pays" name="pays">
+                      <option value="France" selected>France</option>
+                      <option value="Belgique">Belgique</option>
+                      <option value="Canada">Canada</option>
+                    </select>
+                    <label for="pays" class="black-text">Pays</label>
+                  </div>
+                  <input type="submit" value="Valider" class="btn red col s2">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <blockquote>
+            <h4 class="header">Liste des inscrits</h4>
+        </blockquote>
+        <table class="highlight">
+            <thead>
+              <tr>
+                <th style="width: 10vw;">Num.</th>
+                <th style="width: 10vw;">Pseudo</th>
+                <th style="width: 10vw;">Pays</th>
+                <th style="width: 10vw;">État</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% for(let i=0; i<inscrits.length; i++) {%>
+                    <tr>
+                      <td>
+                        <%- inscrits[i].numero %>.
+                      </td>
+                      <td>
+                        <%- inscrits[i].pseudo %>
+                      </td>
+                      <td>
+                        <img src=<%=inscrits[i].img_pays%> alt=<%- inscrits[i].pays %> style="width: 10%; margin-left: auto; margin-right: auto;">
+                      </td>
+                      <td>
+                        <img src=<%=inscrits[i].img_etat%> alt=<%- inscrits[i].etat %> style="width: 10%; margin-left: auto; margin-right: auto;"> 
+                      </td>
+                    </tr>
+                 <% } %>
+            </tbody>
+        </table>
+    </div>
+    <% if(validation) { %>
+      <script> M.toast({html: 'Inscription prise en compte !'}) </script> 
+    <% } %>
+</div>
+<script type="text/javascript" src="/js/perso/affichageForm.js"></script>
+<%- include('../layout/footer'); -%>

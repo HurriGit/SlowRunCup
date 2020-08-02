@@ -1,0 +1,10 @@
+[
+  {
+    "numero": 1,
+    "pseudo": "Hurri",
+    "pays": "France",
+    "etat": "Validé",
+    "img_pays": "/img/france.png",
+    "img_etat": "/img/icon-valide.png"
+  }
+]

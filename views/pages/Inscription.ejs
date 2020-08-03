@@ -5,11 +5,11 @@
         <blockquote>
             <h1 class="header">Inscription<br></h1>
         </blockquote>
-        <p class="justify">
+        <p>
             C'est ici que tu vas pouvoir t'inscrire à la prochaine Slow Run Cup ! Tu n'as qu'à rentrer ton pseudo Ubisoft, ton pays de résidence et ensuite soumettre ton inscription.
             Celle-ci sera ensuite soumise à une validation d'un admin après contact sur Ubisoft. 
         </p>
-        <p class="justify">
+        <p>
             Si tu as la moindre question n'hésite pas à consulter les <a href="Regles" class="underline">règles</a> de la compétition ou bien à nous 
             <a href="Contact" class="underline">contacter</a> directement !
         </p>
@@ -42,13 +42,13 @@
         <blockquote>
             <h4 class="header">Liste des inscrits</h4>
         </blockquote>
-        <table class="highlight">
+        <table class="highlight centered">
             <thead>
               <tr>
-                <th style="width: 10vw;">Num.</th>
-                <th style="width: 10vw;">Pseudo</th>
-                <th style="width: 10vw;">Pays</th>
-                <th style="width: 10vw;">État</th>
+                <th style="width: 250px;">Num.</th>
+                <th style="width: 500px;">Pseudo</th>
+                <th style="width: 500px;">Pays</th>
+                <th style="width: 500px;">État</th>
               </tr>
             </thead>
             <tbody>
@@ -71,9 +71,12 @@
             </tbody>
         </table>
     </div>
-    <% if(validation) { %>
-      <script> M.toast({html: 'Inscription prise en compte !'}) </script> 
+    <% if(message === "L'inscription a bien été prise en compte !") { %>
+      <script>M.toast({html: "L'inscription a bien été prise en compte !"})</script>
+    <% } %>
+    <% if(message === "Le pseudo est déjà présent dans la liste des inscrits") { %>
+      <script>M.toast({html: "Le pseudo est déjà présent dans la liste des inscrits"})</script>
     <% } %>
 </div>
-<script type="text/javascript" src="/js/perso/affichageForm.js"></script>
+<script type="text/javascript" src="/js/perso/gestionForm.js"></script>
 <%- include('../layout/footer'); -%>

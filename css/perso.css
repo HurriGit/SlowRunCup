@@ -66,6 +66,7 @@ blockquote {
 
 p {
   text-align: justify;
+  font-size: 18px;
 }
 
 .input-field .prefix.active {

@@ -16,7 +16,6 @@ app.use("/storage", express.static("storage"));
 
 //Variables
 let inscrits = fs.readFileSync('./storage/inscrits.json')
-//let urlencodedParser = bodyParser.urlencoded({ extended : false })
 app.use(bodyParser.urlencoded({extended : true}))
 app.use(bodyParser.json())
 
@@ -37,7 +36,7 @@ app.get('/Contact', (req, res)  => {
 })
 
 app.get('/Inscription', (req, res)  => {
-    res.render('pages/Inscription', {inscrits: inscrits, validation : false})
+    res.render('pages/Inscription', {inscrits: inscrits, message : ""})
 })
 
 app.post('/Inscription', (req, res) => {
@@ -49,9 +48,19 @@ app.post('/Inscription', (req, res) => {
     pattern.etat = "En attente"
     pattern.img_pays = "/img/" + String(req.body.pays).toLowerCase() + ".png"
     pattern.img_etat = "/img/icon-attente.png"
-    inscrits.push(pattern)
-    fs.writeFileSync('./storage/inscrits.json', JSON.stringify(inscrits, null, 2))
-    res.render('pages/Inscription', {inscrits: inscrits, validation : true})
+    let notPresent = true
+    inscrits.forEach(element => {
+        if(element.pseudo.toLowerCase() === pattern.pseudo.toLowerCase()) {
+            notPresent = false
+        }
+    })
+    if(notPresent) {
+        inscrits.push(pattern)
+        fs.writeFileSync('./storage/inscrits.json', JSON.stringify(inscrits, null, 2))
+        res.render('pages/Inscription', {inscrits: inscrits, message : "L'inscription a bien été prise en compte !"})
+    } else {
+        res.render('pages/Inscription', {inscrits: inscrits, message : "Le pseudo est déjà présent dans la liste des inscrits"})
+    }
 })
 
 

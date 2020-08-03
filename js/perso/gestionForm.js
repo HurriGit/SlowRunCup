@@ -6,3 +6,9 @@ function afficherForm() {
 		form.className = "hide"
     }
 }
+
+function affichageToast() {
+  let strMessage = document.getElementById("messageToast").value
+  console.log(strMessage)
+  M.toast({html: strMessage, classes: 'rounded'})
+}
